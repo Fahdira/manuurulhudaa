@@ -11,7 +11,7 @@ Anggota :
 - 152021039 Iqbal Prayuda
 - 152021040 Aditya Nugraha
 
-[Figma Wireframe of Websites](https://www.figma.com/file/aQ1MvOOUqBO6SXRIHiNJhs/Wireframing-in-Figma?type=design&node-id=0-1&t=iYI9SgyTuSj8hskm-0).
+[Figma Wireframe of Websites](https://www.figma.com/file/aQ1MvOOUqBO6SXRIHiNJhs/Wireframing-in-Figma?type=design&node-id=0-1&t=iYI9SgyTuSj8hskm-0)
 
 
 
