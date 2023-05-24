@@ -5,7 +5,8 @@
 @section('content')
 
 
-<p>user page</p>
+<p>Halo User {{session('users')}}</p>
+<a href="{{ route('users.getLogout') }}">Logout</a>
 
 
 @endsection

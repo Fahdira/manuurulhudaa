@@ -3,6 +3,7 @@
 @section('title','Login')
 
 @section('content')
+@extends('script.authentication')
 
 <p>Login Page Admin</p>
 <br>

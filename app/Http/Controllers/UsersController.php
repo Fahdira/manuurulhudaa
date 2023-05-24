@@ -12,7 +12,12 @@ class UsersController extends Controller
      */
     public function getIndex()
     {
-        return view('users.index');
+        if(session()->has('users')){
+            return view('users.index');
+        }
+            return view('users.login');
+
+
     }
 
     /**
@@ -46,6 +51,9 @@ class UsersController extends Controller
      */
     public function getLogin()
     {
+        if(session()->has('users')){
+            session()->flush('email');
+        }
         return view('users.login');
     }
 
@@ -54,10 +62,18 @@ class UsersController extends Controller
 
         $user = Users::where('email','=',$request->email)->first();
         if($user && $request->password == $user->password){
+            $request->session()->put('users', $user['email']);
             return redirect()->route('users.getIndex')->with('success', 'Berhasil Login');
           }else{
             return redirect()->route('users.getLogin')->with('loginError', 'Username atau Password Salah');
           }
-         // return "Success";
+    }
+
+    public function getLogout() {
+        if (session()->has('email')){
+            session()->flush('email');
+            session()->regenerate();
+        }
+        return redirect()->route('users.getLogin');
     }
 }
