@@ -9,7 +9,7 @@
 
 ## About Us
 
-<img align="center" src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F4b1555a0-1f1f-4f19-9988-380eef835ec2%2Fjujutsu_kaisen.jpg?table=block&id=a68618c7-ac6d-449c-9a82-b6e4366048b2&spaceId=113ae495-b543-4806-853d-40bec879c21f&width=2000&userId=b9501944-248e-4de5-8c38-bf74fc93f267&cache=v2" alt="Teamspace">
+<img align="center" src="(https://i.pinimg.com/originals/a6/b2/56/a6b256f4640c44ed0536b8a5e2932766.jpg)" alt="Teamspace">
 
 <!-- Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
