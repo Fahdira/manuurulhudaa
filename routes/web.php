@@ -26,6 +26,14 @@ Route::get('/admin/user/index', 'App\Http\Controllers\AdminController@getUserInd
 Route::get('/admin/siswa/index', 'App\Http\Controllers\AdminController@getSiswaIndex')->name('admin.getSiswaIndex');
 Route::get('/admin/siswa/edit{id}', 'App\Http\Controllers\AdminController@getEditSiswa')->name('admin.getEditSiswa');
 
+Route::get('/admin/pendaftaran/index', 'App\Http\Controllers\AdminController@getPendaftaranIndex')->name('admin.getPendaftaranIndex');
+Route::get('/admin/posts/index', 'App\Http\Controllers\AdminController@getPostsIndex')->name('admin.getPostsIndex');
+Route::get('/admin/profile', 'App\Http\Controllers\AdminController@getProfile')->name('admin.getProfile');
+Route::get('/admin/edit_profile', 'App\Http\Controllers\AdminController@getEditProfile')->name('admin.getEditProfile');
+Route::post('/admin/edit_profile', 'App\Http\Controllers\AdminController@postUpdateProfile')->name('admin.postUpdateProfile');
+Route::get('/admin/add', 'App\Http\Controllers\AdminController@getAdd')->name('admin.getAdd');
+Route::post('/admin/post', 'App\Http\Controllers\AdminController@postAdd')->name('admin.postAdd');
+
 Route::get('/users/index', 'App\Http\Controllers\UsersController@getIndex')->name('users.getIndex');
 Route::get('/users/create', 'App\Http\Controllers\UsersController@getCreate')->name('users.getCreate');
 Route::post('/users/store', 'App\Http\Controllers\UsersController@postStore')->name('users.postStore');

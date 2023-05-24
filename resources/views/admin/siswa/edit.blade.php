@@ -5,13 +5,8 @@
 @section('content')
 @extends('script.session_admin')
 
-<p>Halo Admin {{session('admin')}}</p>
-<br>
-<a href="">Akun user</a>
-<a href="">Siswa</a>
-<a href="">Pendaftan</a>
-<a href="">Update Informasi</a>
-<br>
+@extends('layouts.admin_navbar')
+
 <form action="" method="POST">
     <label for="nama_siswa">Nama Siswa</label>
     <input type="text"name="nama_siswa" value="{{$siswa->nama_siswa}}">

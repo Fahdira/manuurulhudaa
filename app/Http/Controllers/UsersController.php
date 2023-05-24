@@ -70,7 +70,7 @@ class UsersController extends Controller
     }
 
     public function getLogout() {
-        if (session()->has('email')){
+        if (session()->has('users')){
             session()->flush('email');
             session()->regenerate();
         }

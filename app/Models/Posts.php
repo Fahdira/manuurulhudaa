@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Posts extends Model
 {
     use HasFactory;
-    protected $table = 'posts';
+    protected $table = 'post';
     public $primaryKey = 'post_id';
     public $uniqueKey = 'admin_id';
     protected $fillable = [

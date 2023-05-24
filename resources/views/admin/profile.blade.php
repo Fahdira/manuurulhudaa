@@ -7,13 +7,13 @@
 
 @extends('layouts.admin_navbar')
 
-@if(count($pendaftaran) > 0)
-        @foreach ($pendaftaran as $id)
-            <p>{{$id->tahun_pendaftaran}}</p>
-        @endforeach
-    @else
-        <p>tidak ada data</p>
-@endif
+<p>username = {{$admin->username}}</p>
+<p>No Telp = {{$admin->no_telepon}}</p>
+<p>Jabatan = {{$admin->jabatan}}</p>
+
+<a href="{{route('admin.getEditProfile')}}">Edit Profil</a>
+<a href="{{route('admin.getAdd')}}">Tambah Akun Admin</a>
+
 
 @endsection
 
