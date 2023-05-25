@@ -10,9 +10,8 @@ class Pendaftaran extends Model
     use HasFactory;
     protected $table = 'pendaftaran';
     public $primaryKey = 'id_pendaftaran';
-    public $uniqueKey = 'tahun_pendaftaran';
     protected $fillable = [
-        'tahun_pendaftaran', 'status_pendaftaran', 'desc_pendaftaran'
+        'tahun_pendaftaran', 'status_pendaftaran', 'desc_pendaftaran', 'tahun_pendaftaran'
     ];
 
     public function siswa(){

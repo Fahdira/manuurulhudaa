@@ -14,7 +14,7 @@ class Users extends Model
     protected $fillable = ['email', 'no_telepon', 'password'];
 
     public function siswa(){
-        return $this->hasMany('App\Siswa');
+        return $this->hasMany(Siswa::class);
     }
 
     public function ayahsiswa(){

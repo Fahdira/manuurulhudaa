@@ -24,9 +24,18 @@ Route::post('/admin/login', 'App\Http\Controllers\AdminController@postLogin')->n
 Route::get('/admin/logout', 'App\Http\Controllers\AdminController@getLogout')->name('admin.getLogout');
 Route::get('/admin/user/index', 'App\Http\Controllers\AdminController@getUserIndex')->name('admin.getUserIndex');
 Route::get('/admin/siswa/index', 'App\Http\Controllers\AdminController@getSiswaIndex')->name('admin.getSiswaIndex');
+Route::get('/admin/siswa/show{id}', 'App\Http\Controllers\AdminController@showSiswa')->name('admin.showSiswa');
+Route::post('/admin/siswa/change{id}', 'App\Http\Controllers\AdminController@postChange')->name('admin.postChange');
+Route::post('/admin/siswa/charge{id}', 'App\Http\Controllers\AdminController@postCharge')->name('admin.postCharge');
 Route::get('/admin/siswa/edit{id}', 'App\Http\Controllers\AdminController@getEditSiswa')->name('admin.getEditSiswa');
 
-Route::get('/admin/pendaftaran/index', 'App\Http\Controllers\AdminController@getPendaftaranIndex')->name('admin.getPendaftaranIndex');
+Route::get('/admin/pendaftaran/index', 'App\Http\Controllers\PendaftaranController@getIndex')->name('pendaftaran.getIndex');
+Route::get('/admin/pendaftaran/create', 'App\Http\Controllers\PendaftaranController@getCreate')->name('pendaftaran.getCreate');
+Route::get('/admin/pendaftaran/edit{id}', 'App\Http\Controllers\PendaftaranController@getEdit')->name('pendaftaran.getEdit');
+Route::post('/admin/pendaftaran/store', 'App\Http\Controllers\PendaftaranController@postStore')->name('pendaftaran.postStore');
+Route::post('/admin/pendaftaran/update{id}', 'App\Http\Controllers\PendaftaranController@postUpdate')->name('pendaftaran.postUpdate');
+Route::post('/admin/pendaftaran/change{id}', 'App\Http\Controllers\PendaftaranController@postChange')->name('pendaftaran.postChange');
+Route::delete('/admin/pendaftaran/delete{id}', 'App\Http\Controllers\PendaftaranController@destroy')->name('pendaftaran.destroy');
 
 Route::get('/admin/posts/index', 'App\Http\Controllers\PostsController@getIndex')->name('posts.getIndex');
 Route::get('/admin/posts/create', 'App\Http\Controllers\PostsController@getCreate')->name('posts.getCreate');

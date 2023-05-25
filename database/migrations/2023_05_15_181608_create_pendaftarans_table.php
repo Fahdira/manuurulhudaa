@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pendaftaran', function (Blueprint $table) {
             $table->id('id_pendaftaran');
             $table->integer('tahun_pendaftaran');
-            $table->boolean('status_pendaftaran');
+            $table->boolean('status_pendaftaran')->default('ditutup');
             $table->longText('desc_pendaftaran')->nullable();
             $table->timestamps();
         });

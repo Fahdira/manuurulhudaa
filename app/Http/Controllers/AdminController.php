@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function getIndex()
     {
         if(session()->has('admin')){
@@ -42,8 +39,8 @@ class AdminController extends Controller
     public function getSiswaIndex()
     {
         if(session()->has('admin')){
-            $data['siswa'] = Siswa::All();
-            return view('admin.siswa.index', $data);
+            $siswa = Siswa::with('getUsers')->get();
+            return view('admin.siswa.index', ['siswa'=>$siswa]);
         }
             return view('admin.login');
     }
@@ -54,15 +51,35 @@ class AdminController extends Controller
         return view('admin.siswa.edit', compact('siswa'));
     }
 
-    public function getPendaftaranIndex()
+    public function showSiswa($id)
     {
-        if(session()->has('admin')){
-            $data['pendaftaran'] = Pendaftaran::All();
-            return view('admin.pendaftaran.index', $data);
-        }
-            return view('admin.login');
+        $siswa = Siswa::find($id);
+        return view('admin.siswa.show', compact('siswa'));
     }
 
+    public function postChange(Request $request, $id)
+    {
+        $siswa=Siswa::find($id);
+        $siswa->status_kelulusan = $request->input('status_kelulusan', 'lulus');
+
+        $input = $request->all();
+
+        $siswa->update($input);
+
+        return redirect()->route('admin.getSiswaIndex')->with('success','');
+    }
+
+    public function postCharge(Request $request, $id)
+    {
+        $siswa=Siswa::find($id);
+        $siswa->status_pembayaran = $request->input('status_pembayaran', 'Sudah');
+
+        $input = $request->all();
+
+        $siswa->update($input);
+
+        return redirect()->route('admin.getSiswaIndex')->with('success','');
+    }
 
     public function getProfile()
     {
@@ -134,9 +151,6 @@ class AdminController extends Controller
         return redirect()->route('admin.getProfile')->with('success','Data telah diperbarui');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function getLogin()
     {
         if(session()->has('admin')){
