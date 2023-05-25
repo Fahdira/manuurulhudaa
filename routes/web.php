@@ -31,6 +31,9 @@ Route::get('/admin/pendaftaran/index', 'App\Http\Controllers\AdminController@get
 Route::get('/admin/posts/index', 'App\Http\Controllers\PostsController@getIndex')->name('posts.getIndex');
 Route::get('/admin/posts/create', 'App\Http\Controllers\PostsController@getCreate')->name('posts.getCreate');
 Route::post('/admin/posts/store', 'App\Http\Controllers\PostsController@postStore')->name('posts.postStore');
+Route::get('/admin/posts/edit{id}', 'App\Http\Controllers\PostsController@getEdit')->name('posts.getEdit');
+Route::post('/admin/posts/update{id}', 'App\Http\Controllers\PostsController@postUpdate')->name('posts.postUpdate');
+Route::delete('/admin/posts/delete{id}', 'App\Http\Controllers\PostsController@destroy')->name('posts.destroy');
 
 Route::get('/admin/profile', 'App\Http\Controllers\AdminController@getProfile')->name('admin.getProfile');
 Route::get('/admin/edit_profile', 'App\Http\Controllers\AdminController@getEditProfile')->name('admin.getEditProfile');
