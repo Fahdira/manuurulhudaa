@@ -27,7 +27,11 @@ Route::get('/admin/siswa/index', 'App\Http\Controllers\AdminController@getSiswaI
 Route::get('/admin/siswa/edit{id}', 'App\Http\Controllers\AdminController@getEditSiswa')->name('admin.getEditSiswa');
 
 Route::get('/admin/pendaftaran/index', 'App\Http\Controllers\AdminController@getPendaftaranIndex')->name('admin.getPendaftaranIndex');
-Route::get('/admin/posts/index', 'App\Http\Controllers\AdminController@getPostsIndex')->name('admin.getPostsIndex');
+
+Route::get('/admin/posts/index', 'App\Http\Controllers\PostsController@getIndex')->name('posts.getIndex');
+Route::get('/admin/posts/create', 'App\Http\Controllers\PostsController@getCreate')->name('posts.getCreate');
+Route::post('/admin/posts/store', 'App\Http\Controllers\PostsController@postStore')->name('posts.postStore');
+
 Route::get('/admin/profile', 'App\Http\Controllers\AdminController@getProfile')->name('admin.getProfile');
 Route::get('/admin/edit_profile', 'App\Http\Controllers\AdminController@getEditProfile')->name('admin.getEditProfile');
 Route::post('/admin/edit_profile', 'App\Http\Controllers\AdminController@postUpdateProfile')->name('admin.postUpdateProfile');

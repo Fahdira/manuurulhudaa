@@ -12,6 +12,7 @@ use App\Models\Pendaftaran;
 use App\Models\Alamat;
 use App\Models\Posts;
 use App\Models\Prestasi;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -62,14 +63,6 @@ class AdminController extends Controller
             return view('admin.login');
     }
 
-    public function getPostsIndex()
-    {
-        if(session()->has('admin')){
-            $data['post'] = Posts::All();
-            return view('admin.posts.index', $data);
-        }
-            return view('admin.login');
-    }
 
     public function getProfile()
     {
@@ -118,29 +111,27 @@ class AdminController extends Controller
 
     }
 
-    public function postUpdateProfile(Request $request)
+    public function postUpdateProfile(Request $request, Admin $admin)
     {
-
-
-        $admin = Admin::where('email',session('admin'));
+        $admin = Admin::where('email', session('admin'));
         $admin->email = $request->input('email');
         $admin->username = $request->input('username');
         $admin->no_telepon = $request->input('no_telepon');
         $admin->password = $request->input('password');
         $admin->jabatan = $request->input('jabatan');
 
-
-        $input = $request->except(['_token']);
+        $input = $request->except('_token');
 
         if ($profile_picture = $request->file('profile_picture')) {
-            $destinationPath = 'global/img/';
-            $profileImage = date('YmdHis') . "." . $profile_picture->getClientOriginalExtension();
-            $profile_picture->move($destinationPath, $profileImage);
+            $destinationPath='global/img/';
+            $profileImage = date('YmdHis').".".$profile_picture ->getClientOriginalExtension();
+            $profile_picture ->move($destinationPath, $profileImage);
             $input['profile_picture'] = "$profileImage";
         }
+
         $admin->update($input);
 
-        return redirect()->route('admin.getIndex')->with('success','Perubahan Tersimpan');
+        return redirect()->route('admin.getProfile')->with('success','Data telah diperbarui');
     }
 
     /**

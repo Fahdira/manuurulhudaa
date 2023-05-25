@@ -36,7 +36,7 @@
     <button type="submit" >Register</button>
 </form>
 
-<a href="{{route('admin.getIndex')}}">back</a>
+<a href="{{route('admin.getProfile')}}">back</a>
 
 
 @endsection

@@ -12,6 +12,7 @@
 
 <p>Total Siswa Mendaftar =  <a href="{{route('admin.getSiswaIndex')}}">{{$siswa->count()}}</a></p>
 
+
 @endsection
 
 @section('extra-content')

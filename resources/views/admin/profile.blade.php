@@ -10,7 +10,9 @@
 <p>username = {{$admin->username}}</p>
 <p>No Telp = {{$admin->no_telepon}}</p>
 <p>Jabatan = {{$admin->jabatan}}</p>
-
+<img src="{{ asset('global/img/' . $admin->profile_picture) }}" alt="Profile_Picture" width="100px">
+<p>Profile Picture</p>
+<br>
 <a href="{{route('admin.getEditProfile')}}">Edit Profil</a>
 <a href="{{route('admin.getAdd')}}">Tambah Akun Admin</a>
 

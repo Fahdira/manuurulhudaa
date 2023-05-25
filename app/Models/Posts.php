@@ -10,9 +10,8 @@ class Posts extends Model
     use HasFactory;
     protected $table = 'post';
     public $primaryKey = 'post_id';
-    public $uniqueKey = 'admin_id';
     protected $fillable = [
-        'title', 'description', 'image'
+        'admin_id', 'title', 'description', 'image'
     ];
 
     public function admin(){

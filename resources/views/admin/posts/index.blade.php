@@ -9,13 +9,18 @@
 
 @if(count($post) > 0)
         @foreach ($post as $id)
-            <p>{{$id->title}}</p>
+            <img src="{{ asset('global/img/' . $id->image) }}" alt="gambar" width="100px">
+            <p><b>{{$id->title}}</b></p>
+            <p>{{$id->description}}</p>
+            <a href="">Edit Postingan</a>
+            <a href="">Hapus Postingan</a>
+            <br>
         @endforeach
     @else
         <p>tidak ada data</p>
 @endif
 
-
+<a href="{{route('posts.getCreate')}}">Tambah Informasi</a>
 
 @endsection
 

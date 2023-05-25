@@ -7,8 +7,8 @@
 
 @extends('layouts.admin_navbar')
 
-<form action="{{route('admin.postUpdateProfile')}}" method="POST">
-    @csrf
+<form action="{{route('admin.postUpdateProfile')}}" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
     <label for="email">Email</label>
     <input type="email"name="email" value="{{$admin->email}}">
     <br>
@@ -25,12 +25,12 @@
     <input type="text"name="jabatan" value="{{$admin->jabatan}}">
     <br>
     <label for="profile_picture">Profile Picture</label>
-    <input type="file" name="profile_picture" value="{{ $admin->profile_picture }}">
+    <input type="file" name="profile_picture">
     <br>
     <button type="submit" >Save</button>
 </form>
 
-<a href="{{route('admin.getIndex')}}">back</a>
+<a href="{{route('admin.getProfile')}}">back</a>
 
 
 @endsection
