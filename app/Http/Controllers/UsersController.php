@@ -3,36 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Models\Users;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function getIndex()
-    {
+    public function getIndex(){
+
         if(session()->has('users')){
-            return view('users.index');
+
+            $users = Users::where('email', session('users'))->first();
+            //$users = Auth::user();
+            $siswa = Siswa::where('user_id', $users->id)->get();
+            return view('users.index', compact('users','siswa'));
         }
             return view('users.login');
-
-
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function getCreate()
-    {
+    public function getDaftar(){
+
+        if(session()->has('users')){
+
+             return view('users.daftar');
+        }
+            return view('users.login');
+    }
+
+    public function getCreate(){
+
         return view('users.register');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function postStore(Request $request)
-    {
+    public function postStore(Request $request){
+
         $request->validate([
             'email' => 'required',
             'password' => 'required',
@@ -46,19 +50,15 @@ class UsersController extends Controller
         return redirect()->route('users.getLogin')->with('success', 'Berhasil Daftar Akun');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function getLogin()
-    {
+    public function getLogin(){
+
         if(session()->has('users')){
             session()->flush('email');
         }
         return view('users.login');
     }
 
-    public function postLogin(Request $request)
-    {
+    public function postLogin(Request $request){
 
         $user = Users::where('email','=',$request->email)->first();
         if($user && $request->password == $user->password){

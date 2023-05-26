@@ -81,6 +81,18 @@ class AdminController extends Controller
         return redirect()->route('admin.getSiswaIndex')->with('success','');
     }
 
+    public function postPay(Request $request, $id)
+    {
+        $data=Users::find($id);
+        $data->status_pembayaran = $request->input('status_pembayaran', 'Sudah');
+
+        $input = $request->all();
+
+        $data->update($input);
+
+        return redirect()->route('admin.getUserIndex')->with('success','');
+    }
+
     public function getProfile()
     {
 

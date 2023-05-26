@@ -7,8 +7,7 @@
 <p>Main Page</p>
 <br>
 <a href="{{ route('users.getCreate') }}">Daftar</a>
-
-@endsection
+<a href="{{route('users.getLogin')}}">Login</a>
 
 @section('extra-content')
     <!-- start here -->
@@ -22,3 +21,4 @@
     <!-- start here -->
 @endsection
 
+@endsection

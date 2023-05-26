@@ -6,9 +6,7 @@
 
 @extends('layouts.admin_navbar')
 
-<p>
-    Total User = <a href="{{route('admin.getUserIndex')}}">{{$users->count()}}</a>
-</p>
+<p>Total User = <a href="{{route('admin.getUserIndex')}}">{{$users->count()}}</a></p>
 
 <p>Total Siswa Mendaftar =  <a href="{{route('admin.getSiswaIndex')}}">{{$siswa->count()}}</a></p>
 

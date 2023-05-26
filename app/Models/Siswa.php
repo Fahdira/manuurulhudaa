@@ -16,10 +16,6 @@ class Siswa extends Model
     ];
 
 
-    public function getUsers(){
-        return $this->hasOne(Users::class, 'user_id', 'user_id');
-    }
-
     public function pendaftaran(){
         return $this->hasOne('App\Pendaftaran');
     }

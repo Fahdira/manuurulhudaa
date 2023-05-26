@@ -20,9 +20,12 @@
                 <th>No_telepon</th>
                 <th>Password</th>
                 <th>Status Pembayaran</th>
+                <th></th>
             </tr>
         </thead>
     @foreach ($users as $id)
+    <form action="{{route('admin.postPay', $id->id)}}" method="POST">
+        @csrf
         <tbody>
             <tr>
                 <td>{{$no}}</td>
@@ -34,9 +37,13 @@
                 @else
                     <td>{{$id->status_pembayaran}}</td>
                 @endif
+                <td>
+                    <button type="submit">Sudah Bayar</button>
+                </td>
             </tr>
         </tbody>
         <?php $no++; ?>
+    </form>
 
     @endforeach
     </table>

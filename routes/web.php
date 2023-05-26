@@ -27,6 +27,7 @@ Route::get('/admin/siswa/index', 'App\Http\Controllers\AdminController@getSiswaI
 Route::get('/admin/siswa/show{id}', 'App\Http\Controllers\AdminController@showSiswa')->name('admin.showSiswa');
 Route::post('/admin/siswa/change{id}', 'App\Http\Controllers\AdminController@postChange')->name('admin.postChange');
 Route::post('/admin/siswa/charge{id}', 'App\Http\Controllers\AdminController@postCharge')->name('admin.postCharge');
+Route::post('/admin/siswa/pay{id}', 'App\Http\Controllers\AdminController@postPay')->name('admin.postPay');
 Route::get('/admin/siswa/edit{id}', 'App\Http\Controllers\AdminController@getEditSiswa')->name('admin.getEditSiswa');
 
 Route::get('/admin/pendaftaran/index', 'App\Http\Controllers\PendaftaranController@getIndex')->name('pendaftaran.getIndex');
@@ -51,6 +52,7 @@ Route::get('/admin/add', 'App\Http\Controllers\AdminController@getAdd')->name('a
 Route::post('/admin/post', 'App\Http\Controllers\AdminController@postAdd')->name('admin.postAdd');
 
 Route::get('/users/index', 'App\Http\Controllers\UsersController@getIndex')->name('users.getIndex');
+Route::get('/users/daftar', 'App\Http\Controllers\UsersController@getDaftar')->name('users.getDaftar');
 Route::get('/users/create', 'App\Http\Controllers\UsersController@getCreate')->name('users.getCreate');
 Route::post('/users/store', 'App\Http\Controllers\UsersController@postStore')->name('users.postStore');
 Route::get('/users/login', 'App\Http\Controllers\UsersController@getLogin')->name('users.getLogin');

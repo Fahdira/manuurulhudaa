@@ -10,11 +10,11 @@ class Users extends Model
 {
     use HasFactory;
     protected $table = 'user';
-    protected $guarded = ['user_id'];
+    protected $guarded = ['id'];
     protected $fillable = ['email', 'no_telepon', 'password'];
 
-    public function siswa(){
-        return $this->hasMany(Siswa::class);
+    public function getSiswa(){
+        return $this->belongsTo(Users::class, 'user_id','id_siswa');
     }
 
     public function ayahsiswa(){
