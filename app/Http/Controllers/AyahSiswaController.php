@@ -9,9 +9,9 @@ class AyahSiswaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getIndex()
     {
-        //
+        return view('users.registration.third');
     }
 
     /**

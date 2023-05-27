@@ -61,12 +61,15 @@ Route::get('/users/logout', 'App\Http\Controllers\UsersController@getLogout')->n
 
 Route::get('/users/daftar/siswa', 'App\Http\Controllers\SiswaController@getIndex')->name('siswa.getIndex');
 Route::post('/users/daftar/store', 'App\Http\Controllers\SiswaController@postStore')->name('siswa.postStore');
-Route::get('/users/daftar/alamat', 'App\Http\Controllers\AlamatController@getIndex')->name('alamat.getIndex');
 
-Route::get('provinces', 'DependentDropdownController@provinces')->name('provinces');
-Route::get('cities', 'DependentDropdownController@cities')->name('cities');
-Route::get('districts', 'DependentDropdownController@districts')->name('districts');
-Route::get('villages', 'DependentDropdownController@villages')->name('villages');
+Route::get('/users/daftar/alamat', 'App\Http\Controllers\AlamatController@getIndex')->name('alamat.getIndex');
+Route::get('/users/daftar/alamat/getKabupaten/{id}', 'App\Http\Controllers\AlamatController@getKabupaten')->name('getKabupaten');
+Route::get('/users/daftar/alamat/getKecamatan/{id}', 'App\Http\Controllers\AlamatController@getKecamatan')->name('getKecamatan');
+Route::get('/users/daftar/alamat/getDesa/{id}', 'App\Http\Controllers\AlamatController@getDesa')->name('getdesa');
+Route::post('/users/daftar/post', 'App\Http\Controllers\AlamatController@postStore')->name('alamat.postStore');
+
+Route::get('/users/daftar/wali', 'App\Http\Controllers\AyahSiswaController@getIndex')->name('wali.getIndex');
+
 
 
 

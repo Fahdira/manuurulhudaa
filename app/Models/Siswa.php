@@ -12,7 +12,7 @@ class Siswa extends Model
     public $primaryKey = 'id_siswa';
     protected $fillable = [
         'user_id', 'tahun_pendaftaran', 'nama_siswa', 'NIK', 'NISN', 'tempat_lahir', 'tanggal_lahir', 'kelamin', 'kewarganegaraan', 'anak_ke',
-        'dari_bersaudara', 'agama', 'asal_sekolah', 'keb_khusus', 'keb_disbilitas', 'kartu_keluarga', 'akta_kelahiran', 'pas_foto'
+        'dari_bersaudara', 'agama', 'asal_sekolah', 'keb_khusus', 'keb_disabilitas', 'kartu_keluarga', 'akta_kelahiran', 'pas_foto'
     ];
 
     protected $attributes = [

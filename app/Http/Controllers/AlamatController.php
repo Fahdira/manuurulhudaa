@@ -7,67 +7,78 @@ use App\Models\Province;
 use App\Models\District;
 use App\Models\Regency;
 use App\Models\Village;
+use App\Models\Alamat;
+use App\Models\Users;
 
 class AlamatController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function getIndex()
     {
+        $users = Users::where('email', session('users'))->first();
         $provinces = Province::all();
-        $regencies = Regency::all();
-        $districts = District::all();
-        $villages = Village::all();
 
-        return view('users.registration.second', compact('provinces','regencies','districts','villages'));
+        return view('users.registration.second', compact('provinces','users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function getKabupaten($id)
     {
-        //
+
+        $kabupatens = Regency::where('province_code', $id)->get();
+        $html = '';
+
+        foreach($kabupatens as $kabupaten){
+            $html.= '<option value="'.$kabupaten->code.'">'.$kabupaten->name.'</option>';
+        }
+
+        return response()->json($html);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function getKecamatan($id)
     {
-        //
+
+        $kecamatans = District::where('city_code', $id)->get();
+        $html = '';
+
+        foreach($kecamatans as $kecamatan){
+            $html.= '<option value="'.$kecamatan->code.'">'.$kecamatan->name.'</option>';
+        }
+
+        return response()->json($html);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function getDesa($id)
     {
-        //
+
+        $desas = Village::where('district_code', $id)->get();
+        $html = '';
+
+        foreach($desas as $desa){
+            $html.= '<option value="'.$desa->code.'">'.$desa->name.'</option>';
+        }
+
+        return response()->json($html);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function postStore(Request $request)
     {
-        //
-    }
+        $provinsi = Province::where('code',$request->get('provinsi'))->first();
+        $kabupaten = Regency::where('code',$request->get('kabupaten_kota'))->first();
+        $kecamatan = District::where('code',$request->get('kecamatan'))->first();
+        $desa = Village::where('code',$request->get('desa'))->first();
+        $input = new Alamat([
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+            'nama_jalan' => $request->get('nama_jalan'),
+            'provinsi' => $provinsi->name,
+            'kabupaten_kota' => $kabupaten->name,
+            'kecamatan' => $kecamatan->name,
+            'desa' => $desa->name,
+            'kode_pos' => $request->get('kode_pos'),
+            'id_siswa' =>$request->get('id_siswa'),
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        ]);
+
+        $input->save();
+
+        return redirect()->route('wali.getIndex')->with('success','Data Berhasil Ditambahkan');
     }
 }

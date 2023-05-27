@@ -8,10 +8,7 @@ class DependentDropdownController extends Controller
 {
     public function index()
     {
-        $provinces = Province::pluck('name', 'id');
-
         return view('dependent-dropdown.index', [
-            'provinces' => $provinces,
         ]);
     }
 }

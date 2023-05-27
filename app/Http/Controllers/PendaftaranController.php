@@ -80,5 +80,4 @@ class PendaftaranController extends Controller
         return redirect()->route('pendaftaran.getIndex')->with('success','Postingan Dihapus');
 
     }
-
 }

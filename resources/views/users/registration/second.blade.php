@@ -19,68 +19,117 @@
     @endforeach
 @endif
 
-<form action="" method="POST" enctype="multipart/form-data">
-    {{ csrf_field() }}
-    <label for="nama_jalan">Nama Jalan</label>
-    <input type="text" name='jalan' value="{{old ('nama_jalan')}}">
+<form action="{{route('alamat.postStore')}}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <label for="nama_jalan">Alamat</label>
+    <input type="text" name='nama_jalan' value="{{old ('nama_jalan')}}">
     <br>
-    <label for="desa">Desa / Kelurahan</label>
-    <select name="desa" id="desa" value="{{old('desa')}}">
-        <option value="" disabled selected hidden>Pilih :</option>
-    </select>
-    <label for="kecamatan">Kecamatan</label>
-    <input type="text" name="kecamatan" value="{{old('kecamatan')}}">
-    <br>
-    <label for="kabupaten_kota">Kabupaten Kota</label>
-    <input type="text" name="kabupaten_kota" value="{{old('kabupaten_kota')}}">
-    <br>
-    <label for="provinsi">Provinsi</label>
-    <select name="desa" id="desa" value="{{old('desa')}}">
+    <label>Provinsi</label>
+    <select id="provinsi" name="provinsi">
         @foreach ($provinces as $provinsi)
-            <option value="{{$provinsi->name}}">{{$provinsi->name}}</option>
+            <option value="" disabled selected hidden>--Pilih Provinsi--</option>
+            <option value="{{$provinsi->code}}">{{$provinsi->name}}</option>
         @endforeach
     </select>
+    <br>
+    <label>Kabupaten atau Kota</label>
+    <select id="kabupaten" name="kabupaten_kota">
+        <option value="" disabled selected hidden>--Pilih Kabupaten/Kota--</option>
+    </select>
+    <br>
+    <label>Kecamatan</label>
+    <select id="kecamatan" name="kecamatan">
+        <option value="" disabled selected hidden>--Pilih Kecamatan--</option>
+    </select>
+    <br>
+    <label>Kelurahan atau Desa</label>
+    <select id="desa" name="desa">
+        <option value="" disabled selected hidden>--Pilih Kelurahan Desa--</option>
+    </select>
+    <br>
     <label for="kode_pos">Kode POS</label>
     <input type="text" name="kode_pos" value="{{old('kode_pos')}}">
     <br>
+    <input type="hidden" name="id_siswa" value="{{$users->id}}">
     <button type="submit">Lanjutkan</button>
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script  type="text/javascript">
+
+    $(document).ready(function () {
+        $('#provinsi').change(function () {
+
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')}
+            });
+            var id = $(this).val();
+            $.ajax({
+                type: "GET",
+                url: "/users/daftar/alamat/getKabupaten/"+id,
+                dataType: "json",
+
+                success: function (data){
+                    console.log(data);
+                    $('#kabupaten').html(data);
+                },
+
+                error: function(error){
+                    console.log('error :',error);
+                },
+            });
+
+            $('#kabupaten').change(function () {
+            var id = $(this).val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/users/daftar/alamat/getKecamatan/"+id,
+                    dataType: "json",
+
+                    success: function (data){
+                        console.log(data);
+                        $('#kecamatan').html(data);
+                    },
+
+                    error: function(error){
+                        console.log('error :',error);
+                    },
+                });
+
+            });
+
+            $('#kecamatan').change(function () {
+            var id = $(this).val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/users/daftar/alamat/getDesa/"+id,
+                    dataType: "json",
+
+                    success: function (data){
+                        console.log(data);
+                        $('#desa').html(data);
+                    },
+
+                    error: function(error){
+                        console.log('error :',error);
+                    },
+                });
+
+            });
+        });
+    });
+
+
+</script>
 
 @section('extra-content')
     <!-- start here -->
 @endsection
 
 @section('extra-js')
-<script>
-    function onChangeSelect(url, id, name) {
-      // send ajax request to get the cities of the selected province and append to the select tag
-      $.ajax({
-        url: url,
-        type: 'GET',
-        data: {
-          id: id
-        },
-        success: function (data) {
-          $('#' + name).empty();
-          $('#' + name).append('<option>==Pilih Salah Satu==</option>');
-          $.each(data, function (key, value) {
-            $('#' + name).append('<option value="' + key + '">' + value + '</option>');
-          });
-        }
-      });
-    }
-    $(function () {
-      $('#provinsi').on('change', function () {
-        onChangeSelect('{{ route("cities") }}', $(this).val(), 'kota');
-      });
-      $('#kota').on('change', function () {
-        onChangeSelect('{{ route("districts") }}', $(this).val(), 'kecamatan');
-      })
-      $('#kecamatan').on('change', function () {
-        onChangeSelect('{{ route("villages") }}', $(this).val(), 'desa');
-      })
-    });
-</script>
+
 @endsection
 
 @section('script')

@@ -10,9 +10,7 @@ use App\Http\Controllers\DependentDropdownController;
 
 class SiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function getIndex()
     {
 
@@ -20,18 +18,7 @@ class SiswaController extends Controller
         return view('users.registration.first', $users);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function postStore(Request $request)
+     public function postStore(Request $request)
     {
         $pendaftaran = Pendaftaran::where('status_pendaftaran', 'dibuka')->first();
         $input = new Siswa([
@@ -77,30 +64,5 @@ class SiswaController extends Controller
         $input->save();
 
         return redirect()->route('alamat.getIndex')->with('success', 'Data Ditambahkan');
-    }
-
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }

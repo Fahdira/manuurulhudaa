@@ -12,10 +12,14 @@ class Alamat extends Model
     public $primaryKey = 'id_alamat';
     public $uniqueKey = 'id_siswa';
     protected $fillable = [
-        'nama_jalan', 'desa', 'kabupaten_kota', 'provinsi', 'pobox', 'id_siswa'
+        'nama_jalan', 'desa', 'kabupaten_kota', 'provinsi', 'kode_pos', 'id_siswa', 'kecamatan'
     ];
 
     public function siswa(){
         return $this->belongsTo('App\Siswa');
     }
+
+    protected $attributes = [
+        'kode_pos' => 'Belum Terisi',
+    ];
 }

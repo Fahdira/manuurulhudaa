@@ -83,5 +83,4 @@ class PostsController extends Controller
         return redirect()->route('posts.getIndex')->with('success','Postingan Dihapus');
 
     }
-
 }
