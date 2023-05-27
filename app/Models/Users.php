@@ -14,7 +14,7 @@ class Users extends Model
     protected $fillable = ['email', 'no_telepon', 'password'];
 
     public function getSiswa(){
-        return $this->belongsTo(Users::class, 'user_id','id_siswa');
+        return $this->hasOne(Users::class, 'id','id_siswa');
     }
 
     public function ayahsiswa(){

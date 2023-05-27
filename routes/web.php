@@ -59,5 +59,14 @@ Route::get('/users/login', 'App\Http\Controllers\UsersController@getLogin')->nam
 Route::post('/users/login', 'App\Http\Controllers\UsersController@postLogin')->name('users.postLogin');
 Route::get('/users/logout', 'App\Http\Controllers\UsersController@getLogout')->name('users.getLogout');
 
+Route::get('/users/daftar/siswa', 'App\Http\Controllers\SiswaController@getIndex')->name('siswa.getIndex');
+Route::post('/users/daftar/store', 'App\Http\Controllers\SiswaController@postStore')->name('siswa.postStore');
+Route::get('/users/daftar/alamat', 'App\Http\Controllers\AlamatController@getIndex')->name('alamat.getIndex');
+
+Route::get('provinces', 'DependentDropdownController@provinces')->name('provinces');
+Route::get('cities', 'DependentDropdownController@cities')->name('cities');
+Route::get('districts', 'DependentDropdownController@districts')->name('districts');
+Route::get('villages', 'DependentDropdownController@villages')->name('villages');
+
 
 

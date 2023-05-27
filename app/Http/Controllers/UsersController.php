@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pendaftaran;
 use App\Models\Users;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class UsersController extends Controller
 {
     public function getIndex(){
 
         if(session()->has('users')){
-
             $users = Users::where('email', session('users'))->first();
             //$users = Auth::user();
             $siswa = Siswa::where('user_id', $users->id)->get();
@@ -25,7 +26,8 @@ class UsersController extends Controller
 
         if(session()->has('users')){
 
-             return view('users.daftar');
+            $data['pendaftaran'] = Pendaftaran::All()->first();
+            return view('users.daftar', $data);
         }
             return view('users.login');
     }

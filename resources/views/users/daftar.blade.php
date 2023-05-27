@@ -8,6 +8,16 @@
 
 <p>Daftar</p>
 
+<p>{{$pendaftaran->tahun_pendaftaran}}</p>
+<p>{{$pendaftaran->status_pendaftaran}}</p>
+<p>{{$pendaftaran->desc_pendaftaran}}</p>
+
+@if (($pendaftaran->status_pendaftaran) == 'dibuka');
+        <a href="{{route('siswa.getIndex')}}">Daftar</a>
+    @else
+        <p>Pendaftaran Telah Ditutup</p>
+@endif
+
 @endsection
 
 @section('extra-content')

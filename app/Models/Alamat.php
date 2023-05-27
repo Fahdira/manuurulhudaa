@@ -12,7 +12,7 @@ class Alamat extends Model
     public $primaryKey = 'id_alamat';
     public $uniqueKey = 'id_siswa';
     protected $fillable = [
-        'nama_jalan', 'desa', 'kabupaten_kota', 'provinsi', 'pobox'
+        'nama_jalan', 'desa', 'kabupaten_kota', 'provinsi', 'pobox', 'id_siswa'
     ];
 
     public function siswa(){
