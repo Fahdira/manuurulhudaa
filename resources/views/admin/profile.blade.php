@@ -5,7 +5,7 @@
 @section('content')
 @extends('script.session_admin')
 
-@extends('layouts.admin_navbar')
+@include('layouts.admin_navbar')
 
 <p>username = {{$admin->username}}</p>
 <p>No Telp = {{$admin->no_telepon}}</p>

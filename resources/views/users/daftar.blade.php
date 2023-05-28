@@ -4,7 +4,7 @@
 
 @section('content')
 
-@extends('layouts.users_navbar')
+@include('layouts.users_navbar')
 
 <p>Daftar</p>
 

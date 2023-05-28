@@ -4,7 +4,7 @@
 
 @section('content')
 
-@extends('layouts.admin_navbar')
+@include('layouts.admin_navbar')
 
 <p>Total User = <a href="{{route('admin.getUserIndex')}}">{{$users->count()}}</a></p>
 

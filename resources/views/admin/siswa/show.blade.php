@@ -5,7 +5,7 @@
 @section('content')
 @extends('script.session_admin')
 
-@extends('layouts.admin_navbar')
+@include('layouts.admin_navbar')
 
 <p>Nama  : {{$siswa->nama_siswa}}</p>
 <p>NIK  : {{$siswa->NIK}}</p>

@@ -5,7 +5,7 @@
 @section('content')
 @extends('script.session_admin')
 
-@extends('layouts.admin_navbar')
+@include('layouts.admin_navbar')
 
 @if(count($pendaftaran) > 0)
         @foreach ($pendaftaran as $id)

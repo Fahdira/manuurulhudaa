@@ -13,7 +13,7 @@ class AyahSiswa extends Model
     public $uniqueKey = 'id_siswa';
     protected $fillable = [
         'nama_ayah', 'NIK', 'tempat_lahir', 'tanggal_lahir', 'agama', 'status', 'kewarganegaraan', 'riwayat_pendidikan', 'rata_penghasilan',
-        'pekerjaan', 'no_telepon', 'KTP'
+        'pekerjaan', 'no_telepon', 'KTP','id_siswa',
     ];
 
     public function siswa(){

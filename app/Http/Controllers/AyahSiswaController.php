@@ -3,20 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Users;
 
 class AyahSiswaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function getIndex()
     {
-        return view('users.registration.third');
+        $users = Users::where('email', session('users'))->first();
+        return view('users.registration.third', compact('users'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //

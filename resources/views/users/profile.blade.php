@@ -4,7 +4,7 @@
 
 @section('content')
 
-@extends('layouts.users_navbar')
+@include('layouts.users_navbar')
 
 <p>Beranda</p>
 @if (is_null($users->status_pembayaran))
