@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
+    height: 8vh;
     font-size: 1rem;
     border-bottom: 1px solid lightgray;
     font-family: 'Poppins', sans-serif;
@@ -26,63 +26,68 @@
     }
 
     .info{
-        color: green;
+        color: #25274D;
     }
 
     .Mail-Logo {
         margin-left: 12rem;
         margin-right: 1rem;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
+        color: #25274D;
+
     }
 
     .Logo-Instagram {
         margin-right: 2rem;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
+        color: #25274D;
         cursor: pointer;
     }
 
     .Logo-Instagram:hover {
-        width: 40px;
-        height: 35px;
+        width: 50px;
+        height: 45px;
         transition: ease-in-out 0.1s;
     }
 
     .Facebook-Logo {
         margin-right: 2rem;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
+        color: #25274D;
         cursor: pointer;
     }
 
     .Facebook-Logo:hover {
-        width: 40px;
-        height: 35px;
+        width: 50px;
+        height: 45px;
         transition: ease-in-out 0.1s;
     }
 
     .Button-login-nav-home {
         width: 9vw;
-        height: 7vh;
+        height: 6vh;
         color: white;
-        background-color: green;
+        background-color: #25274D;
         border: none;
         border-radius: 1rem;
     }
 
     .Button-login-nav-home:hover {
-        background-color: seagreen;
+        background-color: #AAABB8;
+        color: #25274D;
         transition: ease-in-out 0.3s;
 
     }
 
     /* Tittle */
     .container-tittle-home {
-        width: 98.5vw;
+        width: 95%;
         display: flex;
         justify-content: space-between;
-        padding: 0 6rem 0 10rem;
+        padding: 0 6rem 0 0rem;
         border-bottom: 1px solid lightgray;
         font-family: 'Poppins', sans-serif;
     }
@@ -90,9 +95,9 @@
     .img-logo-tittle {
         display: flex;
         justify-content: left;
-        width: 5vw;
         height: 10vh;
-        padding: 0.8rem 0 0 0;
+        padding: 0.4rem 0 0.4rem 0;
+        margin-left: 11rem;
     }
 
     .text-tittle-home {
@@ -108,13 +113,13 @@
 
     .text-tittle-home a:hover {
         font-size: 20px;
-        color: green;
+        color: #25274D;
         transition: 0.1s;
     }
 
     .text-tittle-home .satu, .dua, .tiga, .empat {
         padding: 0 4rem 0 0;
-        color: green;
+        color: #308BEC;
     }
 
 
@@ -124,15 +129,14 @@
         justify-content: none;
         align-items: center;
         height: 82vh;
-        background-color: #252525;
         border-bottom: 5px solid gray;
+        background: url('/global/img/asset/gedung3.jpg');
         font-family: 'Poppins', sans-serif;
     }
 
     .img-1 {
         height: 80.5vh;
         width: 45vw;
-        background-image: none;
         filter: brightness(30%);
     }
 
@@ -167,15 +171,16 @@
 
     .Button-DaftarOnline {
         width: 12vw;
-        height: 2.5rem;
+        height: 4rem;
         border: none;
-        background-color: green;
+        background-color:  #308BEC;;
         color: white;
         border-radius: 0.5rem;
+        margin-right: 12rem;
     }
 
     .Button-DaftarOnline:hover {
-        background-color: seagreen;
+        background-color:  #308BEC;;
         transition: ease-in-out 0.3s;
     }
 
