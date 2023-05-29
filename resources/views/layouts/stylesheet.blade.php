@@ -883,7 +883,6 @@
     width: 79vw;
     height: 50vh;
     border: 1px solid grey;
-    border-radius: 1rem;
 }
 
 .kotak-input {
@@ -952,9 +951,9 @@
 }
 
 .img-input {
-    width: 39vw;
-    filter: brightness(50%);
-    border-radius: 1rem;
+    width: 25vw;
+    filter: brightness(60%);
+    padding-left: 17rem;
 }
 
 /* Responsive */

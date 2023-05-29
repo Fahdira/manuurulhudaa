@@ -5,8 +5,6 @@
 @section('content')
 @include('script.authentication')
 
-<p>Login Page Admin</p>
-<br>
 @if (session('success'))
     <p>{{session('success')}}</p>
 @endif
@@ -20,15 +18,37 @@
         <p>{{$err}}</p>
     @endforeach
 @endif
-<form method="POST" action="{{ route('admin.postLogin') }} ">
-    @csrf
-    <label for="email">email</label>
-    <input type="email" name="email">
-    <label for="password">password</label>
-    <input type="password" name="password">
-    <button type="submit">Login</button>
-</form>
-<br>
+
+<div>
+    <h1 class="Heading-1-1"> Selamat Datang Admin</h1>
+
+    <div>
+        <div class="content-input">
+            <form class="form-input-login" action="{{ route('admin.postLogin') }}" method="POST">
+                @csrf
+                <div class="kotak-input">
+                    <h3 class="Header-tittle-login"> Masuk </h3>
+                    <div class="akun-masuk">
+                        <input class="Email-input" type="email" name="email" placeholder="  Email"/>
+                        <input class="Password-input'"type="password" name="password" placeholder="  Password"/>
+                    </div>
+
+                    <div class="masuk-button">
+                        <button class="button-masuk" type="submit"> Masuk </button>
+                    </div>
+
+                    <div class="exstra">
+
+                    </div>
+                </div>
+
+                <div class="content-img">
+                        <img class="img-input" src="" alt="" />
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 @endsection
 
