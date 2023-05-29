@@ -9,9 +9,9 @@ class PrestasiController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function getIndex()
     {
-        //
+        return view('users.registration.fourth');
     }
 
     /**

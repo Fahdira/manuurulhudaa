@@ -21,7 +21,7 @@
 <p>Data Orang Tua / Wali</p>
 <p>Ayah</p>
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="{{route('wali.postStore')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="nama_ayah">Nama Ayah</label>
     <input type="text" name="nama_ayah" value="{{old ('nama_ayah')}}">

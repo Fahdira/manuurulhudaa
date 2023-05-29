@@ -69,7 +69,8 @@ Route::get('/users/daftar/alamat/getDesa/{id}', 'App\Http\Controllers\AlamatCont
 Route::post('/users/daftar/post', 'App\Http\Controllers\AlamatController@postStore')->name('alamat.postStore');
 
 Route::get('/users/daftar/wali', 'App\Http\Controllers\AyahSiswaController@getIndex')->name('wali.getIndex');
+Route::post('/users/daftar/postwali', 'App\Http\Controllers\AyahSiswaController@postStore')->name('wali.postStore');
 
-
+Route::get('/users/daftar/prestasi', 'App\Http\Controllers\PrestasiController@getIndex')->name('prestasi.getIndex');
 
 
