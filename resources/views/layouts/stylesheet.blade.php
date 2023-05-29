@@ -1,4 +1,9 @@
 <style>
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+
     .Nav-home {
     background-color: #191923;
     display: flex;
@@ -132,18 +137,17 @@
         align-items: center;
         height: 62vh;
         background: url('/global/img/asset/gedung3.jpg');
-        font-family: 'Poppins', sans-serif;
     }
 
     .img-1 {
-        height: 62vh;
-        width: 45vw;
-        filter: brightness(30%);
+        height: 40vh;
+        padding-left: 2rem;
+        padding-top: 12.8rem;
     }
 
     .Content-home-1 {
         width: 50vw;
-        padding: 0 0 2rem 5rem;
+        padding: 0 0 2rem 2rem;
         color: #fff;
     }
 
@@ -178,6 +182,18 @@
         color: white;
         border-radius: 0.5rem;
         margin-right: 12rem;
+    }
+    .C-Footer-2 a {
+        text-decoration: none;
+        color: #191923
+    }
+    .Button-DaftarOnline-1 {
+        width: 12vw;
+        height: 4rem;
+        border: none;
+        background-color:  #308BEC;;
+        color: white;
+        border-radius: 0.5rem;
     }
 
     .Button-DaftarOnline:hover {
@@ -252,8 +268,7 @@
 
     .Content-3 .img-3 {
         height: 55vh;
-        width: 45vw;
-        padding-left: 10rem;
+        padding-left: 20rem;
     }
 
     .Container-3 {
@@ -307,6 +322,19 @@
         padding: 1.4rem 0 1rem 0;
     }
 
+    .H-Footer-3-svg{
+        color: #191923;
+        width: 40px;
+        height: 40px;
+    }
+
+    .H-Footer-3-svg-fb{
+        color: #191923;
+        width: 40px;
+        height: 40px;
+        padding-left: 2rem;
+    }
+
     .Copyright {
         background-color: #252525;
         height: 4rem;
@@ -314,7 +342,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 6rem 0 6rem;
-        color: white;
+        color: grey;
     }
 
     /* Responsive */
@@ -380,7 +408,6 @@
 
         .Heading-home-1 {
             width: 50vw;
-            padding: 0;
         }
 
         .Content-home-1 p {

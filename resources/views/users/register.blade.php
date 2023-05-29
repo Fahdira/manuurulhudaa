@@ -45,7 +45,8 @@
                 <h3> Informasi Pendaftaran </h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui veritatis maiores non voluptatem, temporibus in, odit iusto ducimus commodi, quasi ea impedit minus deleniti quam distinctio necessitatibus quis assumenda iure?</p>
                 <h3> Kontak yang bisa dihubungi</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque totam odio tempora, in deleniti commodi expedita illo dolores, magnam debitis tempore repudiandae corporis qui? Dignissimos aperiam nisi unde eius.</p>
+                <p>Ecep Abdul Rohman +62</p>
+        <p>Saepul Yakin +62</p>
             </div>
         </form>
     </div>
