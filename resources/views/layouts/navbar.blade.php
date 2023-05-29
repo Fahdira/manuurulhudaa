@@ -23,12 +23,10 @@
 </div>
 
 <div class="container-tittle-home">
-    <img class="img-logo-tittle" src="{{asset('global/img/asset/logodannama.png')}}" alt=""/>
+    <a href="{{route('guest.index')}}">
+        <img class="img-logo-tittle" src="{{asset('global/img/asset/logodannama.png')}}" alt=""/>
+    </a>
 
     <div class="text-tittle-home">
-        <a class="satu" href="#"> Home </a>
-        <a class="dua" href="#"> Profile </a>
-        <a class="tiga" href="#"> Guru </a>
-        <a class="empat" href="#"> Siswa </a>
     </div>
 </div>

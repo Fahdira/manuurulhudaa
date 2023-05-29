@@ -4,8 +4,8 @@
 
 @section('content')
 
-<p>Login Page User</p>
-<br>
+@include('layouts.navbar')
+
 @if (session('success'))
     <p>{{session('success')}}</p>
 @endif
@@ -19,16 +19,38 @@
         <p>{{$err}}</p>
     @endforeach
 @endif
-<form method="POST" action="{{ route('users.postLogin') }} ">
-    @csrf
-    <label for="email">email</label>
-    <input type="email" name="email">
-    <label for="password">password</label>
-    <input type="password" name="password">
-    <button type="submit">Login</button>
-</form>
-<br>
-<a href="{{ route('users.getCreate') }}">Register</a>
+
+<div>
+    <h1 class="Heading-1-1"> Selamat Datang </h1>
+
+<div>
+   <div class="content-input">
+       <form class="form-input-login" action="{{ route('users.postLogin') }}" method="POST">
+        @csrf
+           <div class="kotak-input">
+               <h3 class="Header-tittle-login"> Masuk </h3>
+               <div class="akun-masuk">
+                   <input class="Email-input" type="email" name="email" placeholder="  Email"/>
+                   <input class="Password-input'"type="password" name="password" placeholder="  Password"/>
+               </div>
+
+               <div class="masuk-button">
+                   <button class="button-masuk" type="submit"> Masuk </button>
+               </div>
+
+               <div class="exstra">
+                   <a class="daftar-akun" href="{{ route('users.getCreate') }}"> Daftar Akun Baru</a>
+               </div>
+           </div>
+
+           <div class="content-img">
+                   <img class="img-input" src="" alt="" />
+            </div>
+       </form>
+   </div>
+</div>
+</div>
+
 
 @endsection
 

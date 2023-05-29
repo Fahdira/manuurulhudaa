@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('guests.index');});
+Route::get('/', function () {return view('guests.index');})->name('guest.index');
 
 Route::get('/admin/index', 'App\Http\Controllers\AdminController@getIndex')->name('admin.getIndex');
 Route::get('/admin', 'App\Http\Controllers\AdminController@getLogin')->name('admin.getLogin');
@@ -53,9 +53,9 @@ Route::post('/admin/post', 'App\Http\Controllers\AdminController@postAdd')->name
 
 Route::get('/users/index', 'App\Http\Controllers\UsersController@getIndex')->name('users.getIndex');
 Route::get('/users/daftar', 'App\Http\Controllers\UsersController@getDaftar')->name('users.getDaftar');
-Route::get('/users/create', 'App\Http\Controllers\UsersController@getCreate')->name('users.getCreate');
+Route::get('/daftar', 'App\Http\Controllers\UsersController@getCreate')->name('users.getCreate');
 Route::post('/users/store', 'App\Http\Controllers\UsersController@postStore')->name('users.postStore');
-Route::get('/users/login', 'App\Http\Controllers\UsersController@getLogin')->name('users.getLogin');
+Route::get('/login', 'App\Http\Controllers\UsersController@getLogin')->name('users.getLogin');
 Route::post('/users/login', 'App\Http\Controllers\UsersController@postLogin')->name('users.postLogin');
 Route::get('/users/logout', 'App\Http\Controllers\UsersController@getLogout')->name('users.getLogout');
 

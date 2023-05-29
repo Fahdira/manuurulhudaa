@@ -41,6 +41,7 @@ class UsersController extends Controller
 
         $request->validate([
             'email' => 'required',
+            'no_telepon' => 'required',
             'password' => 'required',
             'password_confirmation' => 'required|same:password'
         ]);

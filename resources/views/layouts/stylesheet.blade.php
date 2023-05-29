@@ -1,6 +1,6 @@
 <style>
     .Nav-home {
-    background-color: #fff;
+    background-color: #191923;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,7 +26,7 @@
     }
 
     .info{
-        color: #25274D;
+        color: #fbfef9;
     }
 
     .Mail-Logo {
@@ -34,7 +34,7 @@
         margin-right: 1rem;
         width: 40px;
         height: 40px;
-        color: #25274D;
+        color: #fbfef9;
 
     }
 
@@ -42,7 +42,7 @@
         margin-right: 2rem;
         width: 40px;
         height: 40px;
-        color: #25274D;
+        color: #fbfef9;
         cursor: pointer;
     }
 
@@ -56,7 +56,7 @@
         margin-right: 2rem;
         width: 40px;
         height: 40px;
-        color: #25274D;
+        color: #fbfef9;
         cursor: pointer;
     }
 
@@ -69,15 +69,15 @@
     .Button-login-nav-home {
         width: 9vw;
         height: 6vh;
-        color: white;
-        background-color: #25274D;
+        color: #191923;
+        background-color: #fbfef9;
         border: none;
         border-radius: 1rem;
     }
 
     .Button-login-nav-home:hover {
-        background-color: #AAABB8;
-        color: #25274D;
+        background-color: #191923;
+        color: #fbfef9;
         transition: ease-in-out 0.3s;
 
     }
@@ -119,30 +119,31 @@
 
     .text-tittle-home .satu, .dua, .tiga, .empat {
         padding: 0 4rem 0 0;
-        color: #308BEC;
+        color: #0e79b2;
     }
 
-
+    span {
+        color: #308BEC;
+    }
     /*Content First*/
     .Container-home-1 {
         display: flex;
         justify-content: none;
         align-items: center;
-        height: 82vh;
-        border-bottom: 5px solid gray;
+        height: 62vh;
         background: url('/global/img/asset/gedung3.jpg');
         font-family: 'Poppins', sans-serif;
     }
 
     .img-1 {
-        height: 80.5vh;
+        height: 62vh;
         width: 45vw;
         filter: brightness(30%);
     }
 
     .Content-home-1 {
         width: 50vw;
-        padding: 2rem 0 4rem 5rem;
+        padding: 0 0 2rem 5rem;
         color: #fff;
     }
 
@@ -156,9 +157,9 @@
     }
 
     .Heading-home-1 {
-        width: 30vw;
+        width: 40vw;
         padding-bottom: 2rem;
-        font-weight: 700;
+        font-size: 60px;
         font-family: 'Poppins-Bold', sans-serif;
     }
 
@@ -186,34 +187,39 @@
 
     /*Content Second*/
     .container-home-2 {
-        padding: 0 0 0 6rem;
-        height: 80vh;
+        padding: 0 0 0 4rem;
+        height: 60vh;
         font-family: 'Poppins', sans-serif;
         border-bottom: 5px solid gray;
+    }
+
+    .container-home-2 h2 {
+        justify-content: left;
     }
 
     .Heading-home-2 {
         display: flex;
         justify-content: left;
         align-items: center;
-        height: 20rem;
-        padding-top: 3rem;
-        margin-left: 40rem;
+        height: 5rem;
+        padding-top: 6rem;
+        margin-left: 12rem;
         font-weight: 700;
         font-size: 40px;
     }
 
     .content2-1 {
         display: flex;
+        margin-left: 12rem;
     }
 
     .content2-1-1 {
-        width: 40vw;
+        width: 35vw;
     }
 
     .content2-1-2 {
-        width: 45vw;
-        padding-left: 8rem;
+        width: 35vw;
+        padding-left: 4rem;
     }
 
     .Button-Selengkapnya {
@@ -242,7 +248,6 @@
         background-color: #252525;
         padding: 5rem 0 5rem 0;
         font-family: 'Poppins', sans-serif;
-        border-bottom: 5px solid gray;
     }
 
     .Content-3 .img-3 {
@@ -276,8 +281,7 @@
     /*Footer*/
     .C-Footer {
         display: flex;
-        height: 35rem;
-        border-bottom: 5px solid grey;
+        height: 30rem;
         font-family: 'Poppins', sans-serif;
     }
 
@@ -287,13 +291,11 @@
     }
 
     .H-Footer {
-        border-bottom: 2px solid gray;
         padding-bottom: 1rem;
     }
 
     .H-Footer-2 {
         padding: 1.5rem 0 1rem 0;
-        border-bottom: 2px solid gray;
     }
 
     .C-Footer-3 {
@@ -303,7 +305,6 @@
 
     .H-Footer-3 {
         padding: 1.4rem 0 1rem 0;
-        border-bottom: 2px solid gray;
     }
 
     .Copyright {
@@ -530,5 +531,516 @@
             padding: 0;
         }
     }
+    /*Navigation Bar*/
+.Nav-signup {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    font-size: 1rem;
+}
+
+.Nav-signup a {
+    text-decoration: none;
+}
+
+.kiri-signup {
+    width: 100vw;
+    margin-left: 10rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media-signup {
+    padding-right: 3rem ;
+}
+
+.kanan-signup {
+    padding-right: 10rem;
+}
+
+.Button-login-nav {
+    width: 9vw;
+    height: 7vh;
+    color: white;
+    background-color: blue;
+    border: none;
+}
+
+/* Tittle */
+.container-tittle {
+    width: 96vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6rem 0 10rem;
+}
+
+
+.text-tittle-signup {
+    width: 50vw;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.text-tittle-signup a {
+    text-decoration: none;
+}
+
+.text-tittle-signup .satu, .dua, .tiga {
+    padding: 0 4rem 0 0;
+}
+
+/*Input*/
+.content-input {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+}
+
+.heading-1 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 14vh;
+    padding-left: 10rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+}
+
+.form-input {
+    padding: 0 2rem 0 10rem;
+}
+
+.Input {
+    width: 42vw;
+    height: 55vh;
+    border: 1px solid grey;
+}
+
+.Header-daftar {
+    padding-left: 4rem;
+    height: 16vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.akun {
+    display: grid;
+    width: 44.8rem;
+    height: 13vh;
+    padding: 0 1rem 0 3rem;
+}
+
+.akun-data {
+    margin-bottom: 1.3rem;
+}
+
+.akun-2 {
+    padding: 0 0 1.3rem 3rem;
+}
+
+.akun-password {
+    padding-right: 2rem;
+    margin-right: 1.4rem;
+    height: 30px;
+    width: 15vw;
+}
+
+.akun-repassword {
+    padding-right: 4.4rem;
+    height: 30px;
+    width: 15vw;
+}
+
+.daftar-button {
+    padding: 0rem 0 1.3rem 3rem;
+}
+
+.button-daftar {
+    width: 37.4vw;
+    height: 5vh;
+    border: none;
+    background-color: #0e79b2;
+    color: white;
+    border-radius: 0.5rem;
+
+}
+
+.ekstra {
+    display: grid;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.ekstra a {
+    text-decoration: none;
+    color: grey;
+    padding-bottom: 1rem;
+}
+
+.Punya-akun {
+    cursor: pointer;
+}
+
+.form-info {
+    border: 1px solid grey;
+    width: 35vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+.caption-info {
+    display: grid;
+    padding: 3rem 4rem 3rem 3rem;
+    height: 40vh;
+}
+
+.caption-info h3 {
+    font-weight: 700;
+}
+
+.caption-info p {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 480px) {
+    .Nav-signup {
+        font-size: 70%;
+        width: 100vw;
+        justify-content: left;
+    }
+
+    .kiri-signup {
+        margin: 0;
+        padding-left: 2rem;
+        /* padding-right: 9rem; */
+    }
+
+    .kanan-signup {
+        width: 10vw;
+        /* padding-right: 2rem; */
+    }
+
+    .social-media-signup {
+       display: none;
+    }
+
+    .Button-login-nav {
+        width: 25vw;
+        height: 9.99vh;
+        margin-left: 3.7rem;
+    }
+
+    .content-img {
+        display: none;
+    }
+
+    .text-tittle-signup {
+        display: none;
+    }
+
+    .container-tittle {
+        padding: 0 0 0 7.5rem;
+    }
+
+    .img-logo-tittle {
+        width: 20vw;
+        height: 7.2vh;
+        padding: 0;
+        margin-left: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .content-input {
+        display: grid;
+    }
+
+    .heading-1 {
+        padding-left: 6rem;
+    }
+
+    .form-input {
+        padding: 0;
+    }
+
+    .Input {
+        border: none;
+        width: 25vw;
+    }
+
+    .Header-daftar {
+        width: 100vw;
+        height: 3vh;
+        margin-bottom: 1.7rem;
+    }
+
+    .akun {
+        padding-left: 3.1rem;
+    }
+
+    .akun-data {
+        height: 3.8vh;
+        width: 68vw;
+        margin-bottom: 0.4rem;
+        margin-top: 0.8rem;
+    }
+
+    .akun-2 {
+        padding: 0;
+        padding-left: 3.1rem;
+    }
+
+    .akun-password {
+        width: 68vw;
+        height: 4.1vh;
+        margin-bottom: 1.2rem;
+        margin-top: 0.8rem
+    }
+
+    .akun-repassword {
+        width: 68vw;
+        height: 4vh;
+        margin-bottom: 3rem;
+        margin-top: 0.1rem;
+    }
+
+    .button-daftar {
+        width: 68.9vw;
+    }
+
+    .ekstra {
+        width: 100vw;
+        padding-left: 0;
+    }
+
+    .forgot {
+        padding-left: 8rem;
+    }
+
+    .Punya-akun {
+        padding-left: 5.5rem;
+    }
+
+    .form-info {
+        width: 99vw;
+        border: none;
+        border-top: 2px solid black;
+        margin-top: 5rem;
+    }
+
+    .caption-info p {
+        font-size: 85%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text-tittle {
+        display: none;
+    }
+}
+
+/*Input*/
+.Heading-1-1 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 14vh;
+    padding-left: 10rem;
+    font-weight: 700;
+}
+
+.form-input-login {
+    display: flex;
+    margin: 0 10rem;
+    width: 79vw;
+    height: 50vh;
+    border: 1px solid grey;
+    border-radius: 1rem;
+}
+
+.kotak-input {
+    width: 40vw;
+}
+
+.Header-tittle-login {
+    font-weight: 700;
+    padding-left: 6rem;
+    height: 16vh;
+    width: 60vw;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.akun-masuk {
+    display: grid;
+    width: 35vw;
+    height: 13vh;
+    padding: 0 2rem 0 6rem;
+    margin-right: 5.2rem;
+}
+
+.akun-masuk input {
+    margin-bottom: 1.5rem;
+}
+
+.masuk-button {
+    width: 30vw;
+    padding: 1rem 2rem 0 6rem;
+    margin-right: 5.2rem;
+}
+
+.button-masuk {
+    width: 35vw;
+    height: 5vh;
+    border: none;
+    background-color: #0e79b2;
+    color: white;
+    border-radius: 0.5rem;
+}
+
+.exstra {
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.exstra a {
+    text-decoration: none;
+    color: grey;
+}
+
+.exstra .daftar-akun {
+    padding-left: 4rem;
+    cursor: pointer;
+}
+
+.content-img {
+    width: 39vw;
+    display: flex;
+    align-content: center;
+}
+
+.img-input {
+    width: 39vw;
+    filter: brightness(50%);
+    border-radius: 1rem;
+}
+
+/* Responsive */
+
+/* Device Mobile */
+@media screen and (max-width: 480px) {
+    .Nav {
+        font-size: 70%;
+        width: 100vw;
+        justify-content: left;
+    }
+
+    .kiri {
+        margin: 0;
+        padding-left: 2rem;
+        /* padding-right: 5rem; */
+    }
+
+    .kanan {
+        width: 10vw;
+    }
+
+    .social-media {
+       display: none;
+    }
+
+    .Button-Daftar-nav {
+        width: 25vw;
+        height: 9.99vh;
+        margin-left: 3.5rem;
+    }
+
+    .Heading-1-1 {
+        padding-left: 6rem;
+    }
+
+    .form-input-login {
+        border: none;
+        margin: 0;
+        width: 10vw;
+        height: 0;
+    }
+
+    .Header-tittle-login {
+        width: 60vw;
+        height: 3vh;
+        padding-left: 3rem;
+        margin-bottom: 1.7rem;
+    }
+
+    .akun-masuk {
+        width: 84vw;
+        padding: 0 0 0 3.1rem;
+        height: 14vh;
+    }
+
+    .akun-masuk .Email-input {
+        margin-bottom: 1.5rem;
+    }
+
+    .masuk-button {
+        padding: 0 0 0 3rem;
+        margin-top: 1.7rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .button-masuk {
+        width: 70.8vw;
+    }
+
+    .exstra {
+        width: 100vw;
+        padding-left: 0.5rem;
+    }
+
+    .exstra .forgot {
+        padding-left: 8rem;
+    }
+
+    .exstra .daftar-akun {
+        padding-top: 0.3rem;
+        padding-left: 7.7rem;
+    }
+
+    .content-img {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .Nav {
+        font-size: 80%;
+        width: 100vw;
+        height: 10vh;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .kiri {
+        margin: 0;
+        padding-left: 2rem;
+    }
+
+    .Button-Daftar {
+        width: 20vw;
+        margin-right: 15.5rem;
+        height: 8vh;
+    }
+}
+
+
 
 </style>
