@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_2')
 
 @section('title','Admin')
 
@@ -6,9 +6,20 @@
 
 @include('layouts.admin_navbar')
 
-<p>Total User = <a href="{{route('admin.getUserIndex')}}">{{$users->count()}}</a></p>
+<div class="Informasi__Siswa">
+    <div class="Informasi__Siswa">
+        <div class="Form__Informasi-siswa">
+            <h1>{{$users->count()}}</h1>
+            <p>Total User<a href="{{route('admin.getUserIndex')}}"></a></p>
+        </div>
+        <div class="Form__Informasi-siswa">
+            <h1>{{$siswa->count()}}</h1>
+            <p>Siswa Mendaftar<a href="{{route('admin.getSiswaIndex')}}"></a></p>
+        </div>
+        </div>
+    </div>
+</div>
 
-<p>Total Siswa Mendaftar =  <a href="{{route('admin.getSiswaIndex')}}">{{$siswa->count()}}</a></p>
 
 
 @endsection

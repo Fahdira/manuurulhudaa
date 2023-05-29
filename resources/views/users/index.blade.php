@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_2')
 
 @section('title','Users')
 
@@ -6,9 +6,10 @@
 
 @include('layouts.users_navbar')
 
-<p>Beranda</p>
 @if (is_null($users->status_pembayaran))
-    <p>Silahkan Lakukan Pembayaran ke Rek dibawah atau scan Qr code</p>
+    <div class="card-acil">
+        <p>Silahkan Lakukan Pembayaran ke Rek dibawah atau scan Qr code</p>
+    </div>
     @else
         @if (count($siswa) > 0)
             <br>
@@ -35,7 +36,10 @@
             <p>Status Kelulusan  : {{$siswa[0]->status_kelulusan}}</p>
             <p>Status Pemabayran Daftar Ulang  : {{$siswa[0]->status_pembayaran}}</p>
         @else
+        <div class="card-acil">
             <p>Silahkan Masuk ke Halaman Daftar</p>
+        </div>
+
         @endif
 
 @endif

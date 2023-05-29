@@ -1,19 +1,18 @@
-@extends('layouts.master')
+@extends('layouts.master_2')
 
 @section('title','Users')
 
 @section('content')
 
 @include('layouts.users_navbar')
-
-<p>Daftar</p>
-
-<p>{{$pendaftaran->tahun_pendaftaran}}</p>
+{{-- <p>{{$pendaftaran->tahun_pendaftaran}}</p>
 <p>{{$pendaftaran->status_pendaftaran}}</p>
-<p>{{$pendaftaran->desc_pendaftaran}}</p>
+<p>{{$pendaftaran->desc_pendaftaran}}</p> --}}
 
-@if (($pendaftaran->status_pendaftaran) == 'dibuka');
+@if (($pendaftaran->status_pendaftaran) == 'dibuka')
+    <div class="card-acil">
         <a href="{{route('siswa.getIndex')}}">Daftar</a>
+    </div>
     @else
         <p>Pendaftaran Telah Ditutup</p>
 @endif

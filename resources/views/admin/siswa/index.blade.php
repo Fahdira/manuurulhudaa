@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_2')
 
 @section('title','User Details')
 
@@ -9,23 +9,35 @@
 
 @if(count($siswa) > 0)
     <?php $no = 1; ?>
-    <table>
-        <thead>
-            <tr>
-                <th>no</th>
-                <th>nama</th>
-                <th>asal sekolah</th>
-                <th>Tahun daftar</th>
-                <th>Kelamin</th>
-                <th>User Email</th>
-                <th>Status Kelulusan</th>
-                <th>Status Pembayaran</th>
-                <th></th>
-                <th></th>
-            </tr>
-        </thead>
-    @foreach ($siswa as $id)
-    <form action="{{route('admin.postChange', $id->id_siswa)}}" method="POST">
+<div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">No</div>
+        <div class="col col-2">Nama</div>
+        <div class="col col-4">Asal Sekolah</div>
+        <div class="col col-4">Tahun Daftar</div>
+        <div class="col col-4">Akun Email</div>
+        <div class="col col-4">Status Kelulusan</div>
+      </li>
+      @foreach ($siswa as $id)
+        @csrf
+            <li class="table-row">
+                <div class="col col-1" data-label="Job Id">{{$no}}</div>
+                <div class="col col-2" data-label="Customer Name">{{$id->nama_siswa}}</div>
+                <div class="col col-3" data-label="Amount">{{$id->asal_sekolah}}</div>
+                <div class="col col-3" data-label="Amount">{{$id->tahun_pendaftaran}}</div>
+                <div class="col col-3" data-label="Amount">{{$id->getUsers->email}}</div>
+                <div class="col col-3" data-label="Amount">{{$id->status_kelulusan}}</div>
+                <?php $no++; ?>
+            </li>
+    @endforeach
+    </ul>
+  </div>
+@else
+    <p>tidak ada data</p>
+@endif
+
+    {{-- <form action="{{route('admin.postChange', $id->id_siswa)}}" method="POST">
         @csrf
         <tbody>
             <tr>
@@ -41,19 +53,7 @@
                 <td><button type="submit">Lulus</button></td>
             </tr>
         </tbody>
-    </form>
-        <?php $no++; ?>
-    @endforeach
-    </table>
-        @else
-            <p>tidak ada data</p>
-@endif
-
-<button>Download File</button>
-<br>
-
-<a href="{{ route('admin.getIndex') }}">Kembali</a>
-
+    </form> --}}
 
 @endsection
 

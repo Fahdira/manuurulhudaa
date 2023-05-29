@@ -13,6 +13,11 @@ class Users extends Model
     protected $guarded = ['id'];
     protected $fillable = ['email', 'no_telepon', 'password'];
 
+    protected $attributes = [
+        'status_pembayaran' => 'belum',
+        'confirmed' => 'confirmed',
+    ];
+
     public function getSiswa(){
         return $this->hasOne(Users::class, 'id','id_siswa');
     }

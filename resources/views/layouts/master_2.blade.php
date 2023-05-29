@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ url('/global/img/asset/mannuurulhudaa_logo.png') }}">
     <title>MANuurulHudaa | @yield('title')</title>
-    @include('layouts.stylesheet')
+    @include('layouts.stylesheet_login')
 </head>
 <body>
     @yield('content')
