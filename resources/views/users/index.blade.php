@@ -8,10 +8,114 @@
 
 @include('layouts.users_navbar')
 
-@if (is_null($users->status_pembayaran))
-    <div class="card-acil">
-        <p>Silahkan Lakukan Pembayaran ke Rek dibawah atau scan Qr code</p>
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Beranda</h1>
     </div>
+
+    <div class="row">
+        <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-middle">Alur Pendaftaran Online</h5>
+                    <ol>
+                        <li>Melakukan Pembayaran administrasi</li>
+                        <li>Mengisi data pendataran melalui menu <a href="{{route('users.getDaftar')}}">Mendaftar</a></li>
+                        <li>Menunggu pemberitahuan status pendaftaran (Lulus / Tidak)</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-middle">Kontak Bantuan</h5>
+                    <ol>
+                        <li>
+                            Iksan Mashudi - 085722221614 (Pondok Pesantren)
+                            <a href="https://wa.me/+6285722221614" class="ml-2" target="_blank">
+                                <button type="button" class="btn btn-success btn-sm py-0">
+                                    <span class="icon">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </span>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            Ira Triyani - 085659493333 (MA Nuurul Hudaa)
+                            <a href="https://wa.me/+6285659493333" class="ml-2" target="_blank">
+                                <button type="button" class="btn btn-success btn-sm py-0">
+                                    <span class="icon">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </span>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            Righad Salafaein - (MA Nuurul Hudaa)
+                            <a href="" class="ml-2" target="_blank">
+                                <button type="button" class="btn btn-success btn-sm py-0">
+                                    <span class="icon">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </span>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            Saepul Yakin - (Tata Usaha)
+                            <a href="https://wa.me/+6281294747934" class="ml-2" target="_blank">
+                                <button type="button" class="btn btn-success btn-sm py-0">
+                                    <span class="icon">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </span>
+                                </button>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@if (($users->status_pembayaran) == 'belum')
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Silahkan Lakukan Pembayaran dan Konfirmasi Ke No di bawah</h1>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-middle">Lakukan Pembayaran Melalui Kode QR atau no Rekening dibawah</h5>
+                    <ol>
+                        <li>081521993 - BRI A/N Iksan Mashudi</li>
+                        <img src="{{asset('global/img/asset/flowcode.png')}}" width="360px" style="padding-left: 100px" alt="">
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-middle">Konfirmasi Pembayaran</h5>
+                    <ol>
+                        <li>
+                            Saepul Yakin - (Tata Usaha)
+                            <a href="" class="ml-2" target="_blank">
+                                <button type="button" class="btn btn-success btn-sm py-0">
+                                    <span class="icon">
+                                        <i class="bi bi-whatsapp"></i>
+                                    </span>
+                                </button>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @else
         @if (count($siswa) > 0)
             <br>

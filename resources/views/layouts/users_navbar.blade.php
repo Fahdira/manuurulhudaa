@@ -31,7 +31,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+        <a class="nav-link" href="{{route('users.getLogout')}}">
             <i class="bi bi-arrow-bar-left"></i>
             <span>Logout</span>
         </a>
