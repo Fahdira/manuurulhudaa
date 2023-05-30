@@ -81,7 +81,7 @@
                         Profile
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{route('users.getLogout')}}">
+                    <a class="dropdown-item" id="logout" href="{{route('users.getLogout')}}">
                         <i class="bi bi-arrow-left-circle"></i>
                         Logout
                     </a>
