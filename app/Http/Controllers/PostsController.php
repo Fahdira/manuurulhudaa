@@ -13,6 +13,7 @@ class PostsController extends Controller
     public function getIndex()
     {
         if(session()->has('admin')){
+            $data['admin'] = Admin::Where('email', session('admin'))->first();
             $data['post'] = Posts::All();
             return view('admin.posts.index', $data);
         }

@@ -20,6 +20,7 @@ class AdminController extends Controller
     public function getIndex()
     {
         if(session()->has('admin')){
+            $data['admin'] = Admin::Where('email',session('admin'))->first();
             $data['users'] = Users::All();
             $data['siswa'] = Siswa::All();
             return view('admin.index', $data);
@@ -31,6 +32,7 @@ class AdminController extends Controller
     {
         if(session()->has('admin')){
             $data['users'] = Users::All();
+            $data['admin'] = Admin::Where('email',session('admin'))->first();
             return view('admin.user.index', $data);
         }
             return view('admin.login');
@@ -40,7 +42,8 @@ class AdminController extends Controller
     {
         if(session()->has('admin')){
             $siswa = Siswa::with('getUsers')->get();
-            return view('admin.siswa.index', ['siswa'=>$siswa]);
+            $admin['admin'] = Admin::Where('email',session('admin'))->first();
+            return view('admin.siswa.index', ['siswa'=>$siswa], $admin);
         }
             return view('admin.login');
     }

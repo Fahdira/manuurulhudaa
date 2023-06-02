@@ -6,16 +6,25 @@
 
 @include('layouts.admin_navbar')
 
-<div class="Informasi__Siswa">
-    <div class="Informasi__Siswa">
-        <div class="Form__Informasi-siswa">
-            <h1>{{$users->count()}}</h1>
-            <p>Total User<a href="{{route('admin.getUserIndex')}}"></a></p>
+<div class="row-admin">
+    <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow h-100 py-2">
+            <div class="card-body-admin">
+                <ol>
+                    <h1>{{$users->count()}}</h1>
+                    <p>Total User<a href="{{route('admin.getUserIndex')}}"></a></p>
+                </ol>
+            </div>
         </div>
-        <div class="Form__Informasi-siswa">
-            <h1>{{$siswa->count()}}</h1>
-            <p>Siswa Mendaftar<a href="{{route('admin.getSiswaIndex')}}"></a></p>
-        </div>
+    </div>
+    <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
+        <div class="card shadow h-100 py-2">
+            <div class="card-body-admin">
+                <ol>
+                    <h1>{{$siswa->count()}}</h1>
+                    <p>Siswa Mendaftar<a href="{{route('admin.getSiswaIndex')}}"></a></p>
+                </ol>
+            </div>
         </div>
     </div>
 </div>
@@ -52,42 +61,10 @@
             $('has-tooltip').tooltip();
         });
     </script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js">
-    </script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js">
-    </script>
-    <script type="text/javascript" charset="utf8"
-        src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#prestasi-table').DataTable({
-                paging: false,
-                searching: false,
-                ordering: false,
-                info: false,
-                responsive: true,
-                ajax: "https://penerimaan.darussalamciamis.or.id/mendaftar/getPrestasi",
-                columns: [{
-                        data: 'nama',
-                        name: 'nama'
-                    },
-                    {
-                        data: 'peringkat',
-                        name: 'peringkat'
-                    },
-                    {
-                        data: 'tingkat',
-                        name: 'tingkat'
-                    },
-                    {
-                        data: 'tahun',
-                        name: 'tahun'
-                    }
-                ],
-            });
-        });
     </script>
 @endsection
 

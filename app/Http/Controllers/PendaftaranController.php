@@ -14,6 +14,7 @@ class PendaftaranController extends Controller
     {
         if(session()->has('admin')){
             $data['pendaftaran'] = Pendaftaran::All();
+            $data['admin'] = Admin::Where('email', session('admin'))->first();
             return view('admin.pendaftaran.index', $data);
         }
             return view('admin.login');

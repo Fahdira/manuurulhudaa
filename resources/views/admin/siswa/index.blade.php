@@ -9,32 +9,53 @@
 
 @if(count($siswa) > 0)
     <?php $no = 1; ?>
-<div class="container">
-    <ul class="responsive-table">
-      <li class="table-header">
-        <div class="col col-1">No</div>
-        <div class="col col-2">Nama</div>
-        <div class="col col-4">Asal Sekolah</div>
-        <div class="col col-4">Tahun Daftar</div>
-        <div class="col col-4">Akun Email</div>
-        <div class="col col-4">Status Kelulusan</div>
-      </li>
-      @foreach ($siswa as $id)
-        @csrf
-            <li class="table-row">
-                <div class="col col-1" data-label="Job Id">{{$no}}</div>
-                <div class="col col-2" data-label="Customer Name">{{$id->nama_siswa}}</div>
-                <div class="col col-3" data-label="Amount">{{$id->asal_sekolah}}</div>
-                <div class="col col-3" data-label="Amount">{{$id->tahun_pendaftaran}}</div>
-                <div class="col col-3" data-label="Amount">{{$id->getUsers->email}}</div>
-                <div class="col col-3" data-label="Amount">{{$id->status_kelulusan}}</div>
-                <?php $no++; ?>
-            </li>
-    @endforeach
-    </ul>
-  </div>
+    <div class="row-admin">
+        <div class="col-xl-12 col-md-12 mb-4">
+            <div class="card shadow h-100 py-2">
+                <div class="card-body" style="padding: 1.25rem 2rem;line-height: 2rem;font-size: 1.1rem">
+                    <h5 class="card-title font-weight-bold">User Account</h5>
+                    <table class="table table-hover" style="width:100%" id="prestasi-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 5%">No</th>
+                                <th scope="col" style="width: 20%">Nama Siswa</th>
+                                <th scope="col" style="width: 20%">Asal Sekolah</th>
+                                <th scope="col" style="width: 10%">Tahun Daftar</th>
+                                <th scope="col" style="width: 15%">Akun Email</th>
+                                <th scope="col" style="width: 15%">Status Kelulusan</th>
+                                <th scope="col" style="width: 15%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($siswa as $id)
+                                <form action="{{route('admin.postChange', $id->id_siswa)}}" method="POST">
+                                    @csrf
+                                    <td scope="col" style="width: 5%">{{$no}}</td>
+                                    <td scope="col" style="width: 5%">{{$id->nama_siswa}}</td>
+                                    <td scope="col" style="width: 5%">{{$id->asal_sekolah}}</td>
+                                    <td scope="col" style="width: 5%">{{$id->tahun_pendaftaran}}</td>
+                                    <td scope="col" style="width: 5%">{{$id->getUsers->email}}</td>
+                                    <td scope="col" style="width: 5%">{{$id->status_kelulusan}}</td>
+                                    <td scope="col" style="width: 5%">
+                                        <button type="submit" class="btn btn-success">
+                                            Lulus
+                                        </button>
+                                    </td>
+                                </form>
+                                <?php $no++; ?>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 @else
-    <p>tidak ada data</p>
+    <div class="row-admin">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Tidak Ada Data</h1>
+        </div>
+    </div>
 @endif
 
     {{-- <form action="{{route('admin.postChange', $id->id_siswa)}}" method="POST">

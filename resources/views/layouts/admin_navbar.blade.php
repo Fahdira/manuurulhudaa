@@ -1,7 +1,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('users.getIndex')}}">
@@ -20,32 +20,26 @@
         </li>
         <li class="nav-item @yield('daftar-active')">
         <a class="nav-link" href="{{route('admin.getUserIndex')}}">
-            <i class="bi bi-pencil-square"></i>
+            <i class="bi bi-people-fill"></i>
             <span>User Account</span>
         </a>
     </li>
     <li class="nav-item @yield('info-active')">
         <a class="nav-link" href="{{route('admin.getSiswaIndex')}}">
-            <i class="bi bi-info-square-fill"></i>
+            <i class="bi bi-file-person-fill"></i>
             <span>Siswa</span>
         </a>
     </li>
     <li class="nav-item @yield('info-active')">
         <a class="nav-link" href="{{route('pendaftaran.getIndex')}}">
-            <i class="bi bi-info-square-fill"></i>
+            <i class="bi bi-file-earmark-lock2"></i>
             <span>Pendaftaran</span>
         </a>
     </li>
     <li class="nav-item @yield('info-active')">
         <a class="nav-link" href="{{route('posts.getIndex')}}">
-            <i class="bi bi-info-square-fill"></i>
+            <i class="bi bi-info-square"></i>
             <span>Informasi</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('admin.getLogout')}}">
-            <i class="bi bi-arrow-bar-left"></i>
-            <span>Logout</span>
         </a>
     </li>
     <!-- Divider -->
@@ -68,7 +62,7 @@
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         </button>
-                    Admin Dashboard
+                    Admin Dashboard | MA NUURUL HUDAA
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
 
@@ -83,7 +77,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{session('admin')}}<i class="fas fa-caret-down"></i></span>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{session('admin')}} <img class="img-profile rounded-circle" src="{{ asset('global/img/' . $admin->profile_picture) }}"></span>
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

@@ -609,6 +609,13 @@
             max-width: 1140px;
         }
     }
+    .row-admin {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
     .row {
         display: flex;
         flex-wrap: wrap;
@@ -4707,6 +4714,13 @@
         flex: 1 1 auto;
         min-height: 1px;
         padding: 1.25rem;
+    }
+
+    .card-body-admin {
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem;
+        text-align: center;
     }
 
     .card-title {
@@ -10806,8 +10820,8 @@
     }
     .sidebar .nav-item .nav-link .img-profile,
     .topbar .nav-item .nav-link .img-profile {
-        height: 2rem;
-        width: 2rem;
+        width: 1.5rem;
+        margin-left: 4px;
     }
 
     .topbar {
