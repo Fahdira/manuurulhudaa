@@ -145,25 +145,32 @@ class AdminController extends Controller
 
     public function postUpdateProfile(Request $request, Admin $admin)
     {
-        $admin = Admin::where('email', session('admin'));
-        $admin->email = $request->input('email');
-        $admin->username = $request->input('username');
-        $admin->no_telepon = $request->input('no_telepon');
-        $admin->password = $request->input('password');
-        $admin->jabatan = $request->input('jabatan');
+        $password = $request->input('password');
+        $confirm_password = $request->input('confirm_password');
+        if ($confirm_password == $password){
+            $admin = Admin::where('email', session('admin'));
+            $admin->username = $request->input('username');
+            $admin->no_telepon = $request->input('no_telepon');
+            $admin->password = $request->input('password');
+            $admin->jabatan = $request->input('jabatan');
 
-        $input = $request->except('_token');
+            $input = $request->except('_token','confirm_password');
 
-        if ($profile_picture = $request->file('profile_picture')) {
-            $destinationPath='global/img/';
-            $profileImage = date('YmdHis').".".$profile_picture ->getClientOriginalExtension();
-            $profile_picture ->move($destinationPath, $profileImage);
-            $input['profile_picture'] = "$profileImage";
+            if ($profile_picture = $request->file('profile_picture')) {
+                $destinationPath='global/img/';
+                $profileImage = date('YmdHis').".".$profile_picture ->getClientOriginalExtension();
+                $profile_picture ->move($destinationPath, $profileImage);
+                $input['profile_picture'] = "$profileImage";
+            }
+
+            $admin->update($input);
+
+            return redirect()->route('admin.getProfile')->with('success','Data telah diperbarui');
+        }
+        else {
+            return redirect()->route('admin.getEditProfile')->with('error','Password Salah');
         }
 
-        $admin->update($input);
-
-        return redirect()->route('admin.getProfile')->with('success','Data telah diperbarui');
     }
 
     public function getLogin()

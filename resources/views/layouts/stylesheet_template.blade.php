@@ -3689,7 +3689,6 @@
         white-space: nowrap;
         background-color: #eaecf4;
         border: 1px solid #d1d3e2;
-        border-radius: 0.35rem;
     }
     .input-group-text input[type="radio"],
     .input-group-text input[type="checkbox"] {

@@ -67,11 +67,9 @@
         <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-                                    <!-- Dropdown - Messages -->
-                <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                </div>
-            </li>
+            <a href="https://web.whatsapp.com/" target="_blank" style="height: 20px; width: 20px; margin-top:24px;">
+                <i class="bi bi-whatsapp"></i>
+            </a>
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->

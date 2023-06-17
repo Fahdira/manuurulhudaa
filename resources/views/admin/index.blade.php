@@ -7,6 +7,22 @@
 @include('layouts.admin_navbar')
 
 <div class="row-admin">
+    <div class="col-xl-12 col-md-12 mb-4">
+        <div class="card shadow h-100 py-2">
+            <div class="card-body-admin">
+                <ol>
+                    <h1 style="padding-bottom: 10px">Selamat Datang</h1>
+                    <img style="height: 150px; padding: 5px; max-width: 100%; border-radius: 50%!important;" src="{{ asset('global/img/' . $admin->profile_picture) }}" alt="">
+                    <p style="padding-top: 15px">{{$admin->email}}</p>
+                    <h3>{{$admin->username}}</h3>
+                    <p>{{$admin->jabatan}}</p>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row-admin">
     <div class="col-xl-6 col-md-6 col-sm-12 mb-4">
         <div class="card shadow h-100 py-2">
             <div class="card-body-admin">
@@ -28,6 +44,7 @@
         </div>
     </div>
 </div>
+
 
 @endsection
 
